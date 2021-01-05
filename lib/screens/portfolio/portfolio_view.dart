@@ -39,8 +39,9 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
         NavigationItem('About', key: aboutMeKey, position: 1),
         NavigationItem('Resume', key: educationKey, position: 2),
         NavigationItem('Contact', key: experienceKey, position: 3),
-        NavigationItem('Portfolio', key: experienceKey, position: 3),
-        NavigationItem('Contact', key: experienceKey, position: 3),
+        // NavigationItem('Portfolio', key: experienceKey, position: 3),
+        // NavigationItem('Contact', key: experienceKey, position: 3),
+
         // NavigationItem('AboutMe', key: aboutMeKey, position: 1),
         // NavigationItem('Education', key: educationKey, position: 2),
         // NavigationItem('Experience', key: experienceKey, position: 3),

@@ -17,9 +17,17 @@ class Header extends StatelessWidget {
 
     return Container(
       height: 70.0,
-      color: const Color(0xFF05182C),
       padding: EdgeInsets.symmetric(horizontal: 16.0),
       alignment: Alignment.centerLeft,
+      decoration: BoxDecoration(
+        color: const Color(0xFF05182C),
+        border: Border(
+          bottom: BorderSide(
+            width: 2.0,
+            color: const Color(0xFF182A3D),
+          ),
+        ),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -33,7 +41,9 @@ class Header extends StatelessWidget {
                   onPressed: () {
                     print(item.position);
                     scrollController.animateTo(
-                      item.position * screenHeight,
+                      item.position == 1
+                          ? item.position * screenHeight - 70
+                          : item.position * screenHeight,
                       duration: Duration(milliseconds: 700),
                       curve: Curves.easeInOut,
                     );

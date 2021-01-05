@@ -11,7 +11,7 @@ class BackToTopButton extends StatelessWidget {
     final scrollController = context.watch<ScrollController>();
     if (scrollController.isOffsetZero) return SizedBox();
     return FloatingActionButton(
-      backgroundColor: Colors.redAccent,
+      backgroundColor: Colors.blueGrey[700],
       child: Icon(Icons.arrow_upward),
       onPressed: () {
         scrollController.animateTo(
