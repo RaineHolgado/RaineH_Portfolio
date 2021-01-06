@@ -508,11 +508,11 @@ class SkillPercentage extends StatelessWidget {
             totalSteps: 100,
             currentStep: stepPercentage,
             stepSize: 8,
-            selectedColor: Colors.tealAccent[400],
-            gradientColor: LinearGradient(
-              colors: [Colors.greenAccent, Colors.amberAccent],
-            ),
-            unselectedColor: const Color(0xFF05182C),
+            selectedColor: Colors.tealAccent[200],
+            // gradientColor: LinearGradient(
+            //   colors: [Colors.greenAccent, Colors.amberAccent],
+            // ),
+            unselectedColor: Colors.blue,
             padding: 0,
             width: 100,
             height: 100,
