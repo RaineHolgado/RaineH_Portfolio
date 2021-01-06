@@ -12,7 +12,7 @@ class AboutMe extends StatelessWidget {
     print("screenWidth: $screenWidth");
     return Container(
       padding: EdgeInsets.only(top: 2),
-      height: MediaQuery.of(context).size.height + 70,
+      height: screenWidth > 950 ? 695 : 1200,
       width: double.infinity,
       color: const Color(0xFF05182C),
       child: screenWidth > 950 ? _AboutMeDesktop() : _AboutMeMobile(),
@@ -36,6 +36,46 @@ class _AboutMeMobile extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(top: 16.0, right: 5),
+                    decoration: BoxDecoration(
+                      border: Border(
+                        right: BorderSide(
+                          width: 1.0,
+                          color: const Color(0xFF182A3D),
+                        ),
+                      ),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          '02',
+                          style: TextStyle(
+                            fontSize: 12.0,
+                            color: Colors.white60,
+                          ),
+                        ),
+                        SizedBox(width: 3),
+                        Text(
+                          'About',
+                          style: TextStyle(
+                              fontSize: 17.0,
+                              color: Colors.white60,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
             SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30.0),
@@ -47,12 +87,12 @@ class _AboutMeMobile extends StatelessWidget {
                     fontWeight: FontWeight.w800),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 5),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30.0),
               child: Text(
-                "I discovered my passion for design when I was a sophomore in High School; It was then when it became clear what I wanted to do for a living. I pursued my career at the amazing Valencia College where I started my major in Print Design. A year later I took a begginer’s Web class, where I discovered the love for code. After that, I switched my major to Interactive Design and started the never-ending journey of becoming a web developer along with sharpening my eye for design.",
-                style: TextStyle(color: Colors.white, fontSize: 18),
+                "I became aware of my passion for programming for at a young age I have been engaging myself with computers. It was at those moments that I have decided what I aspired to do for a living. I pursued a degree of Computer Engineering at Silliman University to where I was able to expand my knowledge and capabilities about coding and programming. I have been taking up online classes and lessons of the said topics accordingly as well. I was hired as a junior software developer upon graduating and I am currently holding a mid-level software developer position specializing in Flutter Developer.",
+                style: TextStyle(color: Colors.white, fontSize: 17.5),
               ),
             ),
             SizedBox(height: 20),
@@ -112,7 +152,7 @@ class _AboutMeMobile extends StatelessWidget {
                         ),
                         SizedBox(height: 10),
                         Text(
-                          ": 09770225257",
+                          ": 09770225707",
                           style: TextStyle(
                             color: Colors.white60,
                           ),
@@ -163,9 +203,13 @@ class _AboutMeMobile extends StatelessWidget {
                         color: Colors.white,
                         size: 30,
                       ),
+                      SizedBox(height: 15),
                       Text(
                         "Web Developer",
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
                       )
                     ],
                   ),
@@ -190,9 +234,13 @@ class _AboutMeMobile extends StatelessWidget {
                         color: Colors.white,
                         size: 30,
                       ),
+                      SizedBox(height: 15),
                       Text(
                         "Mobile Developer",
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
                       )
                     ],
                   ),
@@ -209,11 +257,47 @@ class _AboutMeMobile extends StatelessWidget {
                       ),
                     ),
                   ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.insights,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                      SizedBox(height: 15),
+                      Text(
+                        "UX/IU Designer",
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
                 ),
               ),
               Expanded(
                 child: Container(
                   height: 130,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.tune,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                      SizedBox(height: 15),
+                      Text(
+                        "QA Tester",
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -260,9 +344,41 @@ class _AboutMeDesktop extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              // RichText(text: text)
+                              Container(
+                                padding: EdgeInsets.only(top: 16.0, right: 5),
+                                decoration: BoxDecoration(
+                                  border: Border(
+                                    right: BorderSide(
+                                      width: 1.0,
+                                      color: const Color(0xFF182A3D),
+                                    ),
+                                  ),
+                                ),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text(
+                                      '02',
+                                      style: TextStyle(
+                                        fontSize: 12.0,
+                                        color: Colors.white60,
+                                      ),
+                                    ),
+                                    SizedBox(width: 3),
+                                    Text(
+                                      'About',
+                                      style: TextStyle(
+                                          fontSize: 17.0,
+                                          color: Colors.white60,
+                                          fontWeight: FontWeight.bold),
+                                    )
+                                  ],
+                                ),
+                              ),
                             ],
                           ),
+                          SizedBox(height: 10),
                           Text(
                             "Hello There!",
                             style: TextStyle(
@@ -270,10 +386,11 @@ class _AboutMeDesktop extends StatelessWidget {
                                 fontSize: 32,
                                 fontWeight: FontWeight.w800),
                           ),
-                          SizedBox(height: 20),
+                          SizedBox(height: 5),
                           Text(
-                            "I discovered my passion for design when I was a sophomore in High School; It was then when it became clear what I wanted to do for a living. I pursued my career at the amazing Valencia College where I started my major in Print Design. A year later I took a begginer’s Web class, where I discovered the love for code. After that, I switched my major to Interactive Design and started the never-ending journey of becoming a web developer along with sharpening my eye for design.",
-                            style: TextStyle(color: Colors.white, fontSize: 18),
+                            "I became aware of my passion for programming for at a young age I have been engaging myself with computers. It was at those moments that I have decided what I aspired to do for a living. I pursued a degree of Computer Engineering at Silliman University to where I was able to expand my knowledge and capabilities about coding and programming. I have been taking up online classes and lessons of the said topics accordingly as well. I was hired as a junior software developer upon graduating and I am currently holding a mid-level software developer position specializing in Flutter Developer.",
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 17.5),
                           ),
                         ],
                       ),
@@ -281,7 +398,8 @@ class _AboutMeDesktop extends StatelessWidget {
                     // Spacer(),
                     Container(
                       width: double.infinity,
-                      padding: EdgeInsets.all(30),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                       decoration: BoxDecoration(
                         color: const Color(0xFF0A1D30),
                         border: Border(
@@ -339,7 +457,7 @@ class _AboutMeDesktop extends StatelessWidget {
                                 ),
                                 SizedBox(height: 10),
                                 Text(
-                                  ": 09770225257",
+                                  ": 09770225707",
                                   style: TextStyle(
                                     color: Colors.white60,
                                   ),
@@ -370,9 +488,12 @@ class _AboutMeDesktop extends StatelessWidget {
             ],
           ),
         ),
+        Divider(
+          height: 1,
+          color: const Color(0xFF182A3D),
+        ),
         Container(
-          decoration: BoxDecoration(
-              border: Border.all(color: const Color(0xFF182A3D), width: 1.0)),
+          width: 1200,
           child: Row(
             children: [
               Expanded(
@@ -394,9 +515,13 @@ class _AboutMeDesktop extends StatelessWidget {
                         color: Colors.white,
                         size: 30,
                       ),
+                      SizedBox(height: 15),
                       Text(
                         "Web Developer",
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
                       )
                     ],
                   ),
@@ -421,9 +546,13 @@ class _AboutMeDesktop extends StatelessWidget {
                         color: Colors.white,
                         size: 30,
                       ),
+                      SizedBox(height: 15),
                       Text(
                         "Mobile Developer",
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
                       )
                     ],
                   ),
@@ -440,15 +569,55 @@ class _AboutMeDesktop extends StatelessWidget {
                       ),
                     ),
                   ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.insights,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                      SizedBox(height: 15),
+                      Text(
+                        "UX/IU Designer",
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
                 ),
               ),
               Expanded(
                 child: Container(
                   height: 130,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.tune,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                      SizedBox(height: 15),
+                      Text(
+                        "QA Tester",
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ],
           ),
+        ),
+        Divider(
+          height: 1,
+          color: const Color(0xFF182A3D),
         ),
       ],
     );

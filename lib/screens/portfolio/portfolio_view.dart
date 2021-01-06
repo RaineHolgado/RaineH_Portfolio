@@ -106,6 +106,7 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
                         children: [
                           Text(
                             'Raine Dale Holgado',
+                            textAlign: TextAlign.center,
                             // style: GoogleFonts.vastShadow(
                             style: GoogleFonts.carterOne(
                                 fontSize: 42,
@@ -118,7 +119,7 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
                             children: <Widget>[
                               // SizedBox(width: 20.0, height: 100.0),
                               Text(
-                                "Im a",
+                                "I'm a",
                                 style: GoogleFonts.secularOne(
                                   fontSize: 30,
                                   color: Colors.white70,

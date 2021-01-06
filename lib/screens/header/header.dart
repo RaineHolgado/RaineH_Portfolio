@@ -14,6 +14,7 @@ class Header extends StatelessWidget {
     final navigationItems = context.watch<List<NavigationItem>>();
     final scrollController = context.watch<ScrollController>();
     final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
 
     return Container(
       height: 70.0,
@@ -28,103 +29,128 @@ class Header extends StatelessWidget {
           ),
         ),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Logo(),
-          Row(
-            children: [
-              for (var item in navigationItems)
-                NavigationBarItem(
-                  color: _getColorNavigate(item.position, screenHeight,
-                      scrollController.position.pixels),
-                  onPressed: () {
-                    print(item.position);
-                    scrollController.animateTo(
-                      item.position == 1
-                          ? item.position * screenHeight - 70
-                          : item.position * screenHeight,
-                      duration: Duration(milliseconds: 700),
-                      curve: Curves.easeInOut,
-                    );
-                  },
-                  text: item.text,
-                ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 13),
-                child: InkWell(
-                  mouseCursor: MaterialStateMouseCursor.clickable,
-                  highlightColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  splashColor: Colors.transparent,
-                  onTap: () async {
-                    if (await canLaunch(
-                        "https://www.facebook.com/DM.kennkoki/")) {
-                      await launch("https://www.facebook.com/DM.kennkoki/");
-                    } else {
-                      print("Could not launch Facebook");
-                    }
-                  },
-                  child: Icon(
-                    FontAwesomeIcons.facebookF,
-                    color: Colors.white60,
-                    size: 18,
-                  ),
-                ),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 1200,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: screenWidth > 950
+                    ? [
+                        Logo(),
+                        Row(
+                          children: [
+                            for (var item in navigationItems)
+                              NavigationBarItem(
+                                color: _getColorNavigate(
+                                    item.position,
+                                    screenHeight,
+                                    scrollController.position.pixels),
+                                onPressed: () {
+                                  print(item.position);
+                                  scrollController.animateTo(
+                                    item.position == 1
+                                        ? item.position * screenHeight - 70
+                                        : item.position * screenHeight,
+                                    duration: Duration(milliseconds: 700),
+                                    curve: Curves.easeInOut,
+                                  );
+                                },
+                                text: item.text,
+                              ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 13),
+                              child: InkWell(
+                                mouseCursor: MaterialStateMouseCursor.clickable,
+                                highlightColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                splashColor: Colors.transparent,
+                                onTap: () async {
+                                  if (await canLaunch(
+                                      "https://www.facebook.com/DM.kennkoki/")) {
+                                    await launch(
+                                        "https://www.facebook.com/DM.kennkoki/");
+                                  } else {
+                                    print("Could not launch Facebook");
+                                  }
+                                },
+                                child: Icon(
+                                  FontAwesomeIcons.facebookF,
+                                  color: Colors.white60,
+                                  size: 18,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 13),
+                              child: InkWell(
+                                mouseCursor: MaterialStateMouseCursor.clickable,
+                                highlightColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                splashColor: Colors.transparent,
+                                onTap: () async {
+                                  if (await canLaunch(
+                                      "http://stackoverflow.com/users/12789200/reign")) {
+                                    await launch(
+                                        "http://stackoverflow.com/users/12789200/reign");
+                                  } else {
+                                    print("Could not launch StackOverflow");
+                                  }
+                                },
+                                child: Icon(
+                                  FontAwesomeIcons.stackOverflow,
+                                  color: Colors.white60,
+                                  size: 18,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 13),
+                              child: InkWell(
+                                mouseCursor: MaterialStateMouseCursor.clickable,
+                                highlightColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                splashColor: Colors.transparent,
+                                onTap: () async {
+                                  if (await canLaunch(
+                                      "https://www.linkedin.com/in/raine-dale-holgado-54b1431a3/n")) {
+                                    await launch(
+                                        "https://www.linkedin.com/in/raine-dale-holgado-54b1431a3/n");
+                                  } else {
+                                    print("Could not launch LinkedIn");
+                                  }
+                                },
+                                child: Icon(
+                                  FontAwesomeIcons.linkedin,
+                                  color: Colors.white60,
+                                  size: 18,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ]
+                    : [
+                        Logo(),
+                        Icon(
+                          Icons.menu,
+                          color: Colors.white60,
+                          size: 25,
+                        )
+                      ],
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 13),
-                child: InkWell(
-                  mouseCursor: MaterialStateMouseCursor.clickable,
-                  highlightColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  splashColor: Colors.transparent,
-                  onTap: () async {
-                    if (await canLaunch(
-                        "http://stackoverflow.com/users/12789200/reign")) {
-                      await launch(
-                          "http://stackoverflow.com/users/12789200/reign");
-                    } else {
-                      print("Could not launch StackOverflow");
-                    }
-                  },
-                  child: Icon(
-                    FontAwesomeIcons.stackOverflow,
-                    color: Colors.white60,
-                    size: 18,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 13),
-                child: InkWell(
-                  mouseCursor: MaterialStateMouseCursor.clickable,
-                  highlightColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  splashColor: Colors.transparent,
-                  onTap: () async {
-                    if (await canLaunch(
-                        "https://www.linkedin.com/in/raine-dale-holgado-54b1431a3/n")) {
-                      await launch(
-                          "https://www.linkedin.com/in/raine-dale-holgado-54b1431a3/n");
-                    } else {
-                      print("Could not launch LinkedIn");
-                    }
-                  },
-                  child: Icon(
-                    FontAwesomeIcons.linkedin,
-                    color: Colors.white60,
-                    size: 18,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
