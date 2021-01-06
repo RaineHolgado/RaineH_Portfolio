@@ -424,7 +424,7 @@ class Education extends StatelessWidget {
                                       backgroundColor: const Color(0xFF182A3D),
                                       percentageText: "90%",
                                       stepPercentage: 90,
-                                      labelText: "Flutter",
+                                      labelText: "Flutter/Dart",
                                     ),
                                     SkillPercentage(
                                       percentageText: "80%",
@@ -507,12 +507,12 @@ class SkillPercentage extends StatelessWidget {
           CircularStepProgressIndicator(
             totalSteps: 100,
             currentStep: stepPercentage,
-            // stepSize: 10,
+            stepSize: 8,
             selectedColor: Colors.tealAccent[400],
             gradientColor: LinearGradient(
               colors: [Colors.greenAccent, Colors.amberAccent],
             ),
-            unselectedColor: Colors.transparent,
+            unselectedColor: const Color(0xFF05182C),
             padding: 0,
             width: 100,
             height: 100,
