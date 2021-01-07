@@ -8,9 +8,11 @@ class BackToTopButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     final scrollController = context.watch<ScrollController>();
     if (scrollController.isOffsetZero) return SizedBox();
     return FloatingActionButton(
+      mini: screenWidth > 950 ? false : true,
       backgroundColor: Colors.blueGrey[700],
       child: Icon(Icons.arrow_upward),
       onPressed: () {

@@ -1,14 +1,20 @@
-import 'package:My_Portfolio/screens/portfolio/portfolio_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Header extends StatelessWidget {
+import 'package:My_Portfolio/screens/portfolio/portfolio_view.dart';
+
+class Header extends StatefulWidget {
   const Header({
     Key key,
   }) : super(key: key);
 
+  @override
+  _HeaderState createState() => _HeaderState();
+}
+
+class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     final navigationItems = context.watch<List<NavigationItem>>();
@@ -44,16 +50,15 @@ class Header extends StatelessWidget {
                           children: [
                             for (var item in navigationItems)
                               NavigationBarItem(
-                                color: _getColorNavigate(
-                                    item.position,
-                                    screenHeight,
-                                    scrollController.position.pixels),
+                                position: item.position,
+                                scrollController:
+                                    scrollController.position.pixels,
                                 onPressed: () {
                                   print(item.position);
                                   scrollController.animateTo(
-                                    item.position == 1
-                                        ? item.position * screenHeight - 70
-                                        : item.position * screenHeight,
+                                    positionToanimateTo(
+                                        position: item.position,
+                                        context: context),
                                     duration: Duration(milliseconds: 700),
                                     curve: Curves.easeInOut,
                                   );
@@ -155,25 +160,28 @@ class Header extends StatelessWidget {
     );
   }
 
-  Color _getColorNavigate(
-      double position, double screenHeight, double controllerHeight) {
-    var startPosition;
-    if (position == 0) {
-      startPosition = position;
-    } else if (position == 1) {
-      startPosition = (position * screenHeight) - 70;
-    } else {
-      startPosition = position * screenHeight;
-    }
+  double positionToanimateTo({int position, BuildContext context}) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
 
-    var endPostion = position == 0
-        ? (position + 1) * (screenHeight - 60)
-        : (position + 1) * screenHeight;
-
-    if (controllerHeight >= startPosition && controllerHeight <= endPostion) {
-      return Colors.white;
-    } else {
-      return Colors.white60;
+    switch (position) {
+      case 0:
+        return 0;
+        break;
+      case 1:
+        return 1 * screenHeight - 70;
+        break;
+      case 2:
+        if (screenWidth > 950) {
+          return 695 + screenHeight - 70; //desktop
+        } else
+          return 1210 + screenHeight; //mobile
+        break;
+      case 3:
+        return 3 * screenHeight - 70;
+        break;
+      default:
+        return position * screenHeight;
     }
   }
 }
@@ -218,21 +226,82 @@ class Logo extends StatelessWidget {
   }
 }
 
-class NavigationBarItem extends StatelessWidget {
+class NavigationBarItem extends StatefulWidget {
   const NavigationBarItem({
     Key key,
     @required this.onPressed,
     @required this.text,
-    @required this.color,
+    @required this.scrollController,
+    this.position,
   }) : super(key: key);
 
   final void Function() onPressed;
   final String text;
-  final Color color;
+  final double scrollController;
+  final int position;
+
+  @override
+  _NavigationBarItemState createState() => _NavigationBarItemState();
+}
+
+class _NavigationBarItemState extends State<NavigationBarItem> {
+  Color _color;
+  // double _scrollController;
+
+  // @override
+  // void initState() {
+  //   _scrollController = widget.scrollController;
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
-    final isSmall = MediaQuery.of(context).size.width < 650;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    _getColorNavigate() {
+      print("CAlled ${widget.scrollController}");
+      switch (widget.position) {
+        case 0:
+          if (widget.scrollController >= 0 &&
+              widget.scrollController <= (screenHeight - 70.99))
+            return Colors.white;
+          return Colors.white60;
+          break;
+        case 1:
+          if (widget.scrollController >= (screenHeight - 70) &&
+              widget.scrollController <= (screenHeight + 695 - 70.99))
+            return Colors.white;
+          return Colors.white60;
+          break;
+        case 2:
+          if (widget.scrollController >= (screenHeight + 695 - 70) &&
+              widget.scrollController <= (screenHeight + 2495))
+            return Colors.white;
+          return Colors.white60;
+          break;
+        case 3:
+          return Colors.white60;
+
+          break;
+        default:
+          return Colors.white60;
+      }
+
+      // if (widget.scrollController >= (screenHeight - 70) &&
+      //     widget.scrollController <= (screenHeight + 695)) return Colors.white;
+      // // if (_scrollController >= 0 && _scrollController <= (screenHeight - 70))
+      // //   return Colors.white;
+      // // if (_scrollController >= 0 && _scrollController <= (screenHeight - 70))
+      // // return Colors.white;
+      // return Colors.white60;
+      // //  if (controllerHeight >= startPosition &&
+      // //     controllerHeight <= endPostion) {
+      // //   return Colors.white;
+      // // } else {
+      // //   return Colors.white60;
+      // // }
+    }
+
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 13),
       child: InkWell(
@@ -240,11 +309,13 @@ class NavigationBarItem extends StatelessWidget {
         highlightColor: Colors.transparent,
         hoverColor: Colors.transparent,
         splashColor: Colors.transparent,
-        onTap: onPressed,
+        onTap: widget.onPressed,
         child: Text(
-          text,
+          widget.text,
           style: TextStyle(
-              color: color, fontSize: 15, fontWeight: FontWeight.bold),
+              color: _getColorNavigate(),
+              fontSize: 15,
+              fontWeight: FontWeight.bold),
         ),
       ),
     );

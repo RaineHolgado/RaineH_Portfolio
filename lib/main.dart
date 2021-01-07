@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Raine Dale Holgado',
       theme: ThemeData(
-        textTheme: GoogleFonts.openSansTextTheme(Theme.of(context).textTheme),
+        textTheme: GoogleFonts.montserratTextTheme(Theme.of(context).textTheme),
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),

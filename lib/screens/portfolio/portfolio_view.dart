@@ -2,6 +2,7 @@ import 'package:My_Portfolio/common/scroll_behavior.dart';
 import 'package:My_Portfolio/screens/about_me/about_me.dart';
 import 'package:My_Portfolio/screens/education/education.dart';
 import 'package:My_Portfolio/screens/experience/experience.dart';
+import 'package:My_Portfolio/screens/header/footer.dart';
 import 'package:My_Portfolio/screens/header/header.dart';
 import 'package:My_Portfolio/screens/portfolio/back_to_top_button.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -109,7 +110,7 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
                             textAlign: TextAlign.center,
                             // style: GoogleFonts.vastShadow(
                             style: GoogleFonts.carterOne(
-                                fontSize: 42,
+                                fontSize: screenWidth > 950 ? 70: 42,
                                 // fontWeight: FontWeight.bold,
                                 color: Colors.white),
                           ),
@@ -133,9 +134,9 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
                                     print("Tap Event");
                                   },
                                   text: [
-                                    "developer",
-                                    "freelancer",
-                                    "gamer",
+                                    "Developer",
+                                    "Designer",
+                                    "Contributor",
                                   ],
                                   textStyle: GoogleFonts.secularOne(
                                     color: Colors.blue[600],
@@ -170,6 +171,7 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
                               AboutMe(key: aboutMeKey),
                               Education(key: educationKey),
                               Experience(key: experienceKey),
+                              FooterWaveWidget()
                             ],
                           )),
                     ],
@@ -196,7 +198,7 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
 class NavigationItem {
   final String text;
   final GlobalKey key;
-  final double position;
+  final int position;
   NavigationItem(
     this.text, {
     @required this.key,

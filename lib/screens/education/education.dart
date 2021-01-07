@@ -9,12 +9,14 @@ class Education extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Container(
       // padding: EdgeInsets.symmetric(horizontal: 20),
-      height: 1400,
+      height: 1800,
       // height: MediaQuery.of(context).size.height,
       width: double.infinity,
       color: const Color(0xFF05182C),
+      // color: Colors.blueGrey,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -27,117 +29,186 @@ class Education extends StatelessWidget {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Expanded(
-                          flex: 1,
-                          child: Container(
-                            height: 1400,
-                            decoration: BoxDecoration(
-                              border: Border(
-                                right: BorderSide(
-                                  width: 1.0,
-                                  color: const Color(0xFF182A3D),
-                                ),
-                              ),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 20.0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        padding:
-                                            EdgeInsets.only(top: 16.0, left: 5),
-                                        decoration: BoxDecoration(
-                                          border: Border(
-                                            left: BorderSide(
-                                              width: 1.0,
-                                              color: const Color(0xFF182A3D),
-                                            ),
-                                          ),
-                                        ),
-                                        child: Row(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: <Widget>[
-                                            Text(
-                                              '03',
-                                              style: TextStyle(
-                                                fontSize: 12.0,
-                                                color: Colors.white60,
-                                              ),
-                                            ),
-                                            SizedBox(width: 3),
-                                            Text(
-                                              'Resume',
-                                              style: TextStyle(
-                                                  fontSize: 17.0,
-                                                  color: Colors.white60,
-                                                  fontWeight: FontWeight.bold),
-                                            )
-                                          ],
-                                        ),
+                        screenWidth > 950
+                            ? Expanded(
+                                flex: 1,
+                                child: Container(
+                                  height: 1400,
+                                  decoration: BoxDecoration(
+                                    border: Border(
+                                      right: BorderSide(
+                                        width: 1.0,
+                                        color: const Color(0xFF182A3D),
                                       ),
-                                    ],
+                                    ),
                                   ),
-                                ),
-                                SizedBox(height: 30),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 20.0),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        'Education',
-                                        style: TextStyle(
-                                            fontSize: 15.0,
-                                            color: Colors.white60,
-                                            fontWeight: FontWeight.bold),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 20.0),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              padding: EdgeInsets.only(
+                                                  top: 16.0, left: 5),
+                                              decoration: BoxDecoration(
+                                                border: Border(
+                                                  left: BorderSide(
+                                                    width: 1.0,
+                                                    color:
+                                                        const Color(0xFF182A3D),
+                                                  ),
+                                                ),
+                                              ),
+                                              child: Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: <Widget>[
+                                                  Text(
+                                                    '03',
+                                                    style: TextStyle(
+                                                      fontSize: 12.0,
+                                                      color: Colors.white60,
+                                                    ),
+                                                  ),
+                                                  SizedBox(width: 3),
+                                                  Text(
+                                                    'Resume',
+                                                    style: TextStyle(
+                                                        fontSize: 17.0,
+                                                        color: Colors.white60,
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                      SizedBox(height: 10),
-                                      Text(
-                                        'Experience',
-                                        style: TextStyle(
-                                            fontSize: 15.0,
-                                            color: Colors.white60,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      SizedBox(height: 10),
-                                      Text(
-                                        'Skills',
-                                        style: TextStyle(
-                                            fontSize: 15.0,
-                                            color: Colors.white60,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      SizedBox(height: 10),
-                                      Text(
-                                        'Organizations',
-                                        style: TextStyle(
-                                            fontSize: 15.0,
-                                            color: Colors.white60,
-                                            fontWeight: FontWeight.bold),
-                                      ),
+                                      SizedBox(height: 30),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 20.0),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Education',
+                                              style: TextStyle(
+                                                  fontSize: 15.0,
+                                                  color: Colors.white60,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(height: 10),
+                                            Text(
+                                              'Experience',
+                                              style: TextStyle(
+                                                  fontSize: 15.0,
+                                                  color: Colors.white60,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(height: 10),
+                                            Text(
+                                              'Skills',
+                                              style: TextStyle(
+                                                  fontSize: 15.0,
+                                                  color: Colors.white60,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(height: 10),
+                                            Text(
+                                              'Organizations',
+                                              style: TextStyle(
+                                                  fontSize: 15.0,
+                                                  color: Colors.white60,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ],
+                                        ),
+                                      )
                                     ],
                                   ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
+                                ),
+                              )
+                            : SizedBox(),
                         Expanded(
                           flex: 3,
                           child: Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 30.0),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: screenWidth > 700 ? 30.0 : 15),
                             child: Column(children: [
+                              screenWidth < 950
+                                  ? Container(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal:
+                                                  screenWidth > 700 ? 10 : 5,
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                  padding: EdgeInsets.only(
+                                                      top: 16.0, left: 5),
+                                                  decoration: BoxDecoration(
+                                                    border: Border(
+                                                      left: BorderSide(
+                                                        width: 1.0,
+                                                        color: const Color(
+                                                            0xFF182A3D),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  child: Row(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: <Widget>[
+                                                      Text(
+                                                        '03',
+                                                        style: TextStyle(
+                                                          fontSize: 12.0,
+                                                          color: Colors.white60,
+                                                        ),
+                                                      ),
+                                                      SizedBox(width: 3),
+                                                      Text(
+                                                        'Resume',
+                                                        style: TextStyle(
+                                                            fontSize: 17.0,
+                                                            color:
+                                                                Colors.white60,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  : SizedBox(),
                               SizedBox(height: 50),
                               Row(
                                 children: [
@@ -181,7 +252,7 @@ class Education extends StatelessWidget {
                                       children: [
                                         SizedBox(height: 5),
                                         Text(
-                                          "2014 - 2018",
+                                          "2014 - 2019",
                                           style: TextStyle(
                                               fontSize: 16,
                                               color: Colors.white54),
@@ -262,7 +333,7 @@ class Education extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              SizedBox(height: 40),
+                              SizedBox(height: 50),
                               Row(
                                 children: [
                                   Text(
@@ -305,7 +376,7 @@ class Education extends StatelessWidget {
                                       children: [
                                         SizedBox(height: 5),
                                         Text(
-                                          "2018 - Present",
+                                          "2019 - Present",
                                           style: TextStyle(
                                               fontSize: 16,
                                               color: Colors.white54),
@@ -320,7 +391,7 @@ class Education extends StatelessWidget {
                                         ),
                                         SizedBox(height: 10),
                                         Text(
-                                          "OutSource Coders (September 2018 - Present)",
+                                          "OutSource Coders (September 2019 - Present)",
                                           style: TextStyle(
                                               fontSize: 16,
                                               color: Colors.white54,
@@ -368,7 +439,7 @@ class Education extends StatelessWidget {
                                       children: [
                                         SizedBox(height: 5),
                                         Text(
-                                          "2016 - 2017",
+                                          "2018",
                                           style: TextStyle(
                                               fontSize: 16,
                                               color: Colors.white54),
@@ -435,7 +506,7 @@ class Education extends StatelessWidget {
                                       backgroundColor: const Color(0xFF182A3D),
                                       percentageText: "70%",
                                       stepPercentage: 70,
-                                      labelText: "Javascript",
+                                      labelText: "SQL",
                                     ),
                                     SkillPercentage(
                                       percentageText: "90%",
@@ -530,10 +601,15 @@ class SkillPercentage extends StatelessWidget {
           SizedBox(
             height: 15,
           ),
-          Text(
-            labelText,
-            style: TextStyle(
-                fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
+          Container(
+            alignment: Alignment.center,
+            width: 110,
+
+            child: Text(
+              labelText,
+              style: TextStyle(
+                  fontSize: 19, color: Colors.white, fontWeight: FontWeight.bold),
+            ),
           )
         ],
       ),

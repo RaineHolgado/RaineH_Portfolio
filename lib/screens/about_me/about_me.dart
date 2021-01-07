@@ -12,7 +12,7 @@ class AboutMe extends StatelessWidget {
     print("screenWidth: $screenWidth");
     return Container(
       padding: EdgeInsets.only(top: 2),
-      height: screenWidth > 950 ? 695 : 1200,
+      height: screenWidth > 950 ? 695 : 1210,
       width: double.infinity,
       color: const Color(0xFF05182C),
       child: screenWidth > 950 ? _AboutMeDesktop() : _AboutMeMobile(),
@@ -88,10 +88,11 @@ class _AboutMeMobile extends StatelessWidget {
               ),
             ),
             SizedBox(height: 5),
-            Padding(
+            Container(
+              height: 267,
               padding: const EdgeInsets.symmetric(horizontal: 30.0),
               child: Text(
-                "I became aware of my passion for programming for at a young age I have been engaging myself with computers. It was at those moments that I have decided what I aspired to do for a living. I pursued a degree of Computer Engineering at Silliman University to where I was able to expand my knowledge and capabilities about coding and programming. I have been taking up online classes and lessons of the said topics accordingly as well. I was hired as a junior software developer upon graduating and I am currently holding a mid-level software developer position specializing in Flutter Developer.",
+                "I became aware of my passion for programming for at a young age I have been engaging myself with computers. It was at those moments that I have decided what I aspired to do for a living. I pursued a degree of Computer Engineering at Silliman University to where I was able to expand my knowledge and capabilities about coding and programming. I have been taking up online classes and lessons of the said topics accordingly as well. I was hired as a junior software developer upon graduating and I am currently holding a mid-level software developer position specializing in Flutter.",
                 style: TextStyle(color: Colors.white, fontSize: 17.5),
               ),
             ),
@@ -115,7 +116,7 @@ class _AboutMeMobile extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Birthdate",
+                        "Fullname",
                         style: TextStyle(
                             color: Colors.white60, fontWeight: FontWeight.bold),
                       ),
@@ -145,7 +146,7 @@ class _AboutMeMobile extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          ": 09/16/1997",
+                          ": Raine Dale B. Holgado",
                           style: TextStyle(
                             color: Colors.white60,
                           ),
@@ -181,124 +182,135 @@ class _AboutMeMobile extends StatelessWidget {
         ),
         Container(
           decoration: BoxDecoration(
-              border: Border.all(color: const Color(0xFF182A3D), width: 1.0)),
-          child: Row(
+            // border: Border.all(color: const Color(0xFF182A3D), width: 1.0),
+            border: Border(
+              top: BorderSide(
+                width: 1.0,
+                color: const Color(0xFF182A3D),
+              ),
+              bottom: BorderSide(
+                width: 1.0,
+                color: const Color(0xFF182A3D),
+              ),
+            ),
+          ),
+          child: Column(
             children: [
-              Expanded(
-                child: Container(
-                  height: 130,
-                  decoration: BoxDecoration(
-                    border: Border(
-                      right: BorderSide(
-                        width: 1.0,
-                        color: const Color(0xFF182A3D),
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 130,
+                      decoration: BoxDecoration(
+                        border: Border(
+                          right: BorderSide(
+                            width: 1.0,
+                            color: const Color(0xFF182A3D),
+                          ),
+                        ),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.computer_outlined,
+                            color: Colors.white,
+                            size: 30,
+                          ),
+                          SizedBox(height: 15),
+                          Text(
+                            "Web Developer",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
                       ),
                     ),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.computer_outlined,
-                        color: Colors.white,
-                        size: 30,
-                      ),
-                      SizedBox(height: 15),
-                      Text(
-                        "Web Developer",
-                        style: TextStyle(
-                            fontSize: 16,
+                  Expanded(
+                    child: Container(
+                      height: 130,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.phone_android,
                             color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  height: 130,
-                  decoration: BoxDecoration(
-                    border: Border(
-                      right: BorderSide(
-                        width: 1.0,
-                        color: const Color(0xFF182A3D),
+                            size: 30,
+                          ),
+                          SizedBox(height: 15),
+                          Text(
+                            "Mobile Developer",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
                       ),
                     ),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.phone_android,
-                        color: Colors.white,
-                        size: 30,
-                      ),
-                      SizedBox(height: 15),
-                      Text(
-                        "Mobile Developer",
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                ),
+                ],
               ),
-              Expanded(
-                child: Container(
-                  height: 130,
-                  decoration: BoxDecoration(
-                    border: Border(
-                      right: BorderSide(
-                        width: 1.0,
-                        color: const Color(0xFF182A3D),
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 130,
+                      decoration: BoxDecoration(
+                        border: Border(
+                          right: BorderSide(
+                            width: 1.0,
+                            color: const Color(0xFF182A3D),
+                          ),
+                        ),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.insights,
+                            color: Colors.white,
+                            size: 30,
+                          ),
+                          SizedBox(height: 15),
+                          Text(
+                            "UI/UX Designer",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
                       ),
                     ),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.insights,
-                        color: Colors.white,
-                        size: 30,
-                      ),
-                      SizedBox(height: 15),
-                      Text(
-                        "UX/IU Designer",
-                        style: TextStyle(
-                            fontSize: 16,
+                  Expanded(
+                    child: Container(
+                      height: 130,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.tune,
                             color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  height: 130,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.tune,
-                        color: Colors.white,
-                        size: 30,
+                            size: 30,
+                          ),
+                          SizedBox(height: 15),
+                          Text(
+                            "QA Tester",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
                       ),
-                      SizedBox(height: 15),
-                      Text(
-                        "QA Tester",
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      )
-                    ],
+                    ),
                   ),
-                ),
+                ],
               ),
             ],
           ),
@@ -388,7 +400,7 @@ class _AboutMeDesktop extends StatelessWidget {
                           ),
                           SizedBox(height: 5),
                           Text(
-                            "I became aware of my passion for programming for at a young age I have been engaging myself with computers. It was at those moments that I have decided what I aspired to do for a living. I pursued a degree of Computer Engineering at Silliman University to where I was able to expand my knowledge and capabilities about coding and programming. I have been taking up online classes and lessons of the said topics accordingly as well. I was hired as a junior software developer upon graduating and I am currently holding a mid-level software developer position specializing in Flutter Developer.",
+                            "I became aware of my passion for programming for at a young age I have been engaging myself with computers. It was at those moments that I have decided what I aspired to do for a living. I pursued a degree of Computer Engineering at Silliman University to where I was able to expand my knowledge and capabilities about coding and programming. I have been taking up online classes and lessons of the said topics accordingly as well. I was hired as a junior software developer upon graduating and I am currently holding a mid-level software developer position specializing in Flutter.",
                             style:
                                 TextStyle(color: Colors.white, fontSize: 17.5),
                           ),
@@ -405,7 +417,7 @@ class _AboutMeDesktop extends StatelessWidget {
                         border: Border(
                           left: BorderSide(
                             width: 10.0,
-                            color: Colors.blue[800],
+                            color: Colors.indigo[800],
                           ),
                         ),
                       ),
@@ -416,7 +428,7 @@ class _AboutMeDesktop extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Birthdate",
+                                "Fullname",
                                 style: TextStyle(
                                     color: Colors.white60,
                                     fontWeight: FontWeight.bold),
@@ -450,7 +462,7 @@ class _AboutMeDesktop extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  ": 09/16/1997",
+                                  ": Raine Dale B. Holgado",
                                   style: TextStyle(
                                     color: Colors.white60,
                                   ),
@@ -579,7 +591,7 @@ class _AboutMeDesktop extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       Text(
-                        "UX/IU Designer",
+                        "UI/UX Designer",
                         style: TextStyle(
                             fontSize: 16,
                             color: Colors.white,
