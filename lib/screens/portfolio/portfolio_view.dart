@@ -1,10 +1,11 @@
 import 'package:My_Portfolio/common/scroll_behavior.dart';
 import 'package:My_Portfolio/screens/about_me/about_me.dart';
+import 'package:My_Portfolio/screens/download/download_cv.dart';
 import 'package:My_Portfolio/screens/education/education.dart';
-import 'package:My_Portfolio/screens/experience/experience.dart';
 import 'package:My_Portfolio/screens/header/footer.dart';
 import 'package:My_Portfolio/screens/header/header.dart';
 import 'package:My_Portfolio/screens/portfolio/back_to_top_button.dart';
+import 'package:My_Portfolio/screens/portfolio_view/portfolio.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -39,7 +40,7 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
         NavigationItem('Home', key: homeKey, position: 0),
         NavigationItem('About', key: aboutMeKey, position: 1),
         NavigationItem('Resume', key: educationKey, position: 2),
-        NavigationItem('Contact', key: experienceKey, position: 3),
+        NavigationItem('Portfolio', key: experienceKey, position: 3),
         // NavigationItem('Portfolio', key: experienceKey, position: 3),
         // NavigationItem('Contact', key: experienceKey, position: 3),
 
@@ -110,7 +111,7 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
                             textAlign: TextAlign.center,
                             // style: GoogleFonts.vastShadow(
                             style: GoogleFonts.carterOne(
-                                fontSize: screenWidth > 950 ? 70: 42,
+                                fontSize: screenWidth > 950 ? 70 : 42,
                                 // fontWeight: FontWeight.bold,
                                 color: Colors.white),
                           ),
@@ -170,7 +171,8 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
                             children: [
                               AboutMe(key: aboutMeKey),
                               Education(key: educationKey),
-                              Experience(key: experienceKey),
+                              DownloadCV(),
+                              Portfolio(key: experienceKey),
                               FooterWaveWidget()
                             ],
                           )),

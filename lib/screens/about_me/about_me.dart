@@ -12,7 +12,7 @@ class AboutMe extends StatelessWidget {
     print("screenWidth: $screenWidth");
     return Container(
       padding: EdgeInsets.only(top: 2),
-      height: screenWidth > 950 ? 695 : 1210,
+      height: screenWidth > 950 ? 695 : 1213,
       width: double.infinity,
       color: const Color(0xFF05182C),
       child: screenWidth > 950 ? _AboutMeDesktop() : _AboutMeMobile(),
@@ -23,6 +23,8 @@ class AboutMe extends StatelessWidget {
 class _AboutMeMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    
     return Column(
       children: [
         Container(
@@ -93,7 +95,9 @@ class _AboutMeMobile extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 30.0),
               child: Text(
                 "I became aware of my passion for programming for at a young age I have been engaging myself with computers. It was at those moments that I have decided what I aspired to do for a living. I pursued a degree of Computer Engineering at Silliman University to where I was able to expand my knowledge and capabilities about coding and programming. I have been taking up online classes and lessons of the said topics accordingly as well. I was hired as a junior software developer upon graduating and I am currently holding a mid-level software developer position specializing in Flutter.",
-                style: TextStyle(color: Colors.white, fontSize: 17.5),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: screenWidth > 415 ? 17.5 : 16),
               ),
             ),
             SizedBox(height: 20),

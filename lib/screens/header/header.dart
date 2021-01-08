@@ -51,15 +51,15 @@ class _HeaderState extends State<Header> {
                             for (var item in navigationItems)
                               NavigationBarItem(
                                 position: item.position,
-                                scrollController:
-                                    scrollController.position.pixels,
+                                scrollController: scrollController,
                                 onPressed: () {
                                   print(item.position);
                                   scrollController.animateTo(
                                     positionToanimateTo(
                                         position: item.position,
-                                        context: context),
-                                    duration: Duration(milliseconds: 700),
+                                        context: context,
+                                        controller: scrollController),
+                                    duration: Duration(milliseconds: 800),
                                     curve: Curves.easeInOut,
                                   );
                                 },
@@ -160,7 +160,8 @@ class _HeaderState extends State<Header> {
     );
   }
 
-  double positionToanimateTo({int position, BuildContext context}) {
+  double positionToanimateTo(
+      {int position, BuildContext context, ScrollController controller}) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
 
@@ -175,10 +176,10 @@ class _HeaderState extends State<Header> {
         if (screenWidth > 950) {
           return 695 + screenHeight - 70; //desktop
         } else
-          return 1210 + screenHeight; //mobile
+          return 1213 + screenHeight; //mobile
         break;
       case 3:
-        return 3 * screenHeight - 70;
+        return controller.position.maxScrollExtent;
         break;
       default:
         return position * screenHeight;
@@ -237,7 +238,7 @@ class NavigationBarItem extends StatefulWidget {
 
   final void Function() onPressed;
   final String text;
-  final double scrollController;
+  final ScrollController scrollController;
   final int position;
 
   @override
@@ -262,24 +263,31 @@ class _NavigationBarItemState extends State<NavigationBarItem> {
       print("CAlled ${widget.scrollController}");
       switch (widget.position) {
         case 0:
-          if (widget.scrollController >= 0 &&
-              widget.scrollController <= (screenHeight - 70.99))
+          if (widget.scrollController.position.pixels >= 0 &&
+              widget.scrollController.position.pixels <= (screenHeight - 70.99))
             return Colors.white;
           return Colors.white60;
           break;
         case 1:
-          if (widget.scrollController >= (screenHeight - 70) &&
-              widget.scrollController <= (screenHeight + 695 - 70.99))
-            return Colors.white;
+          if (widget.scrollController.position.pixels >= (screenHeight - 70) &&
+              widget.scrollController.position.pixels <=
+                  (screenHeight + 695 - 70.99)) return Colors.white;
           return Colors.white60;
           break;
         case 2:
-          if (widget.scrollController >= (screenHeight + 695 - 70) &&
-              widget.scrollController <= (screenHeight + 2495))
+          if (widget.scrollController.position.pixels >=
+                  (screenHeight + 695 - 70) &&
+              widget.scrollController.position.pixels <= (screenHeight + 2495))
             return Colors.white;
           return Colors.white60;
           break;
         case 3:
+          if (widget.scrollController.position.pixels >=
+                  (screenHeight + 2495) &&
+              widget.scrollController.position.pixels <=
+                  widget.scrollController.position.maxScrollExtent)
+            return Colors.white;
+
           return Colors.white60;
 
           break;

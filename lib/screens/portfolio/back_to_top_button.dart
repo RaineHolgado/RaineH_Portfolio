@@ -18,7 +18,7 @@ class BackToTopButton extends StatelessWidget {
       onPressed: () {
         scrollController.animateTo(
           0,
-          duration: Duration(milliseconds: 700),
+          duration: Duration(milliseconds: 800),
           curve: Curves.easeInOut,
         );
       },
