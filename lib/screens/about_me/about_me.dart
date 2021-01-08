@@ -1,3 +1,4 @@
+import 'package:My_Portfolio/common/constant.dart';
 import 'package:flutter/material.dart';
 
 class AboutMe extends StatelessWidget {
@@ -504,10 +505,7 @@ class _AboutMeDesktop extends StatelessWidget {
             ],
           ),
         ),
-        Divider(
-          height: 1,
-          color: const Color(0xFF182A3D),
-        ),
+        ContainerDivider(),
         Container(
           width: 1200,
           child: Row(
@@ -631,10 +629,8 @@ class _AboutMeDesktop extends StatelessWidget {
             ],
           ),
         ),
-        Divider(
-          height: 1,
-          color: const Color(0xFF182A3D),
-        ),
+              ContainerDivider(),
+
       ],
     );
   }

@@ -1,3 +1,4 @@
+import 'package:My_Portfolio/common/constant.dart';
 import 'package:My_Portfolio/screens/education/experience.dart';
 import 'package:My_Portfolio/screens/education/organizations.dart';
 import 'package:My_Portfolio/screens/education/skills.dart';
@@ -226,11 +227,7 @@ class Education extends StatelessWidget {
                                     ),
                                     SizedBox(width: 10),
                                     Expanded(
-                                      child: Divider(
-                                        height: 1,
-                                        color: const Color(0xFF182A3D),
-                                        // color: Colors.white,
-                                      ),
+                                      child: ContainerDivider(),
                                     )
                                   ],
                                 ),
@@ -284,11 +281,7 @@ class Education extends StatelessWidget {
                                   ],
                                 ),
                                 SizedBox(height: 20),
-                                Divider(
-                                  height: 1,
-                                  color: const Color(0xFF182A3D),
-                                  // color: Colors.white,
-                                ),
+                                ContainerDivider(),
                                 SizedBox(height: 20),
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,3 +1,4 @@
+import 'package:My_Portfolio/common/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
@@ -21,11 +22,7 @@ class Skills extends StatelessWidget {
             ),
             SizedBox(width: 10),
             Expanded(
-              child: Divider(
-                height: 1,
-                color: const Color(0xFF182A3D),
-                // color: Colors.white,
-              ),
+              child: ContainerDivider(),
             )
           ],
         ),

@@ -110,7 +110,9 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
                             'Raine Dale Holgado',
                             textAlign: TextAlign.center,
                             // style: GoogleFonts.vastShadow(
-                            style: GoogleFonts.carterOne(
+                            // style: GoogleFonts.rokkitt(
+                            // style: GoogleFonts.carterOne(
+                            style: GoogleFonts.vastShadow(
                                 fontSize: screenWidth > 950 ? 70 : 42,
                                 // fontWeight: FontWeight.bold,
                                 color: Colors.white),

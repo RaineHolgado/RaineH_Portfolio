@@ -1,3 +1,4 @@
+import 'package:My_Portfolio/common/constant.dart';
 import 'package:flutter/material.dart';
 
 class Portfolio extends StatelessWidget {
@@ -195,11 +196,7 @@ class Portfolio extends StatelessWidget {
                                     ),
                                     SizedBox(width: 10),
                                     Expanded(
-                                      child: Divider(
-                                        height: 1,
-                                        color: const Color(0xFF182A3D),
-                                        // color: Colors.white,
-                                      ),
+                                      child: ContainerDivider(),
                                     )
                                   ],
                                 ),
