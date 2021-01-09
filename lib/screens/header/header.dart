@@ -127,9 +127,9 @@ class _HeaderState extends State<Header> {
                                 splashColor: Colors.transparent,
                                 onTap: () async {
                                   if (await canLaunch(
-                                      "https://www.linkedin.com/in/raine-dale-holgado-54b1431a3/n")) {
+                                      "https://www.linkedin.com/in/raine-dale-holgado-54b1431a3/")) {
                                     await launch(
-                                        "https://www.linkedin.com/in/raine-dale-holgado-54b1431a3/n");
+                                        "https://www.linkedin.com/in/raine-dale-holgado-54b1431a3/");
                                   } else {
                                     print("Could not launch LinkedIn");
                                   }

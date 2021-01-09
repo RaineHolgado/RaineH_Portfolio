@@ -85,6 +85,13 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
                         width: screenWidth,
                         fit: BoxFit.cover,
                       ),
+                      // FadeInImage.assetNetwork(
+                      //   placeholder: "",
+                      //   image: 'assets/images/wallpaper.gif',
+                      //   height: screenHeight,
+                      //   width: screenWidth,
+                      //   fit: BoxFit.cover,
+                      // ),
                       Container(
                         height: screenHeight,
                         width: screenWidth,
@@ -112,9 +119,10 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
                             // style: GoogleFonts.vastShadow(
                             // style: GoogleFonts.rokkitt(
                             // style: GoogleFonts.carterOne(
-                            style: GoogleFonts.vastShadow(
+                            style: TextStyle(
                                 fontSize: screenWidth > 950 ? 70 : 42,
                                 // fontWeight: FontWeight.bold,
+                                fontFamily: "Vast Shadow",
                                 color: Colors.white),
                           ),
                           // SizedBox(height: 20),
@@ -124,7 +132,8 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
                               // SizedBox(width: 20.0, height: 100.0),
                               Text(
                                 "I'm a",
-                                style: GoogleFonts.secularOne(
+                                style: TextStyle(
+                                  fontFamily: "Secular One",
                                   fontSize: 30,
                                   color: Colors.white70,
                                 ),
@@ -141,7 +150,8 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
                                     "Designer",
                                     "Contributor",
                                   ],
-                                  textStyle: GoogleFonts.secularOne(
+                                  textStyle: TextStyle(
+                                    fontFamily: "Secular One",
                                     color: Colors.blue[600],
                                     fontSize: 30,
                                   ),
